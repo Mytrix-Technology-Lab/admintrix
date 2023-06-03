@@ -33,7 +33,6 @@ vender/
 log/
 composer.lock
 gitpush.sh
-pkg/
 bin/
 cbuild
 */.DS_Store
