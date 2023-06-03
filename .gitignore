@@ -36,7 +36,6 @@ gitpush.sh
 bin/
 cbuild
 */.DS_Store
-pkg/config/config.toml
 main
 .vscode
 go.sum

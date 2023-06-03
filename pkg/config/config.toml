@@ -1,0 +1,62 @@
+# HTTP Server.
+[server]
+address        = ":8299"
+serverRoot     = "public"
+serverAgent    = "admintrix"
+logPath        = "/tmp/log/admintrix/server"
+nameToUriType  = 2
+routeOverWrite = true
+
+# Logger configurations.
+[logger]
+path   = "/tmp/log/admintrix"
+level  = "all"
+stdout = true
+
+# Template view configurations.
+[viewer]
+path        = "/public/template"
+defaultFile = "index.html"
+Delimiters  =  ["{{", "}}"]
+
+# Database configurations.
+[database]
+link  = "postgres:postgres:postgres@tcp(127.0.0.1:5432)/admintrix.goframe.elevue"
+debug = true
+# Database Logger
+[database.logger]
+Path   = "/tmp/log/admintrix/sql"
+Level  = "all"
+Stdout = true
+
+# GF-CLI
+[gfcli]
+# DAO(database) - System
+[[gfcli.gen.dao]]
+link   = "postgres:postgres:postgres@tcp(127.0.0.1:5432)/admintrix.goframe.elevue"
+group  = "default"
+remove-prefix = "sys"
+tables = "sys_user,sys_user_role,sys_role,sys_role_menu,sys_position,sys_menu,sys_level,sys_dept,sys_city,sys_dict,sys_dict_data,sys_config,sys_config_data,sys_link,sys_item,sys_item_cate,sys_ad_sort,sys_ad,sys_notice,sys_example"
+# DAO(database) - UMS Member Level
+[[gfcli.gen.dao]]
+link   = "postgres:postgres:postgres@tcp(127.0.0.1:5432)/admintrix.goframe.elevue"
+group  = "default"
+remove-prefix = "ums"
+tables = "ums_member_level,ums_member"
+
+[gfcli.build]
+name     = "test"
+goarch   = "amd64" # 386,amd64,arm
+system   = "linux" # linux,darwin,windows
+mod      = "none"
+cgo      = 0
+pack     = "public,public/template"
+version  = "v1.0.0"
+output   = "./bin"
+extra    = ""
+
+[admintrix]
+version = "v2.2.0"
+app_debug = "false"
+image_url = "http://images.goframe.elevue"
+upload_dir = "D:\AdminTrix\AdminTrix\public\uploads"
