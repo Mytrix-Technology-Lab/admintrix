@@ -19,3 +19,30 @@
 
 # Go workspace file
 go.work
+
+.DS_Store
+.buildpath
+.hgignore.swp
+.project
+.orig
+.swp
+.idea/
+.settings/
+.vscode/
+vender/
+log/
+composer.lock
+gitpush.sh
+pkg/
+bin/
+cbuild
+*/.DS_Store
+pkg/config/config.toml
+main
+.vscode
+go.sum
+
+.svn
+evui/
+internal/app/service/generate.go
+go_build_main_go.exe
