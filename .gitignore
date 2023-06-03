@@ -39,8 +39,10 @@ cbuild
 main
 .vscode
 go.sum
+node_modules/
 
 .svn
 evui/
 internal/app/service/generate.go
 go_build_main_go.exe
+temp/

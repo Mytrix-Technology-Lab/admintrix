@@ -21,7 +21,7 @@ Delimiters  =  ["{{", "}}"]
 
 # Database configurations.
 [database]
-link  = "postgres:postgres:postgres@tcp(127.0.0.1:5432)/admintrix.goframe.elevue"
+link  = "pgsql:postgres:postgres@tcp(127.0.0.1:5432)/admintrix"
 debug = true
 # Database Logger
 [database.logger]
@@ -33,13 +33,13 @@ Stdout = true
 [gfcli]
 # DAO(database) - System
 [[gfcli.gen.dao]]
-link   = "postgres:postgres:postgres@tcp(127.0.0.1:5432)/admintrix.goframe.elevue"
+link   = "pgsql:postgres:postgres@tcp(127.0.0.1:5432)/admintrix"
 group  = "default"
 remove-prefix = "sys"
 tables = "sys_user,sys_user_role,sys_role,sys_role_menu,sys_position,sys_menu,sys_level,sys_dept,sys_city,sys_dict,sys_dict_data,sys_config,sys_config_data,sys_link,sys_item,sys_item_cate,sys_ad_sort,sys_ad,sys_notice,sys_example"
 # DAO(database) - UMS Member Level
 [[gfcli.gen.dao]]
-link   = "postgres:postgres:postgres@tcp(127.0.0.1:5432)/admintrix.goframe.elevue"
+link   = "pgsql:postgres:postgres@tcp(127.0.0.1:5432)/admintrix"
 group  = "default"
 remove-prefix = "ums"
 tables = "ums_member_level,ums_member"
@@ -56,7 +56,7 @@ output   = "./bin"
 extra    = ""
 
 [admintrix]
-version = "v2.2.0"
-app_debug = "false"
+version = "v1.0.0"
+app_debug = "true"
 image_url = "http://images.goframe.elevue"
-upload_dir = "D:\AdminTrix\AdminTrix\public\uploads"
+upload_dir = "/Users/yudhistiro/goproject/project/admintrix/public/uploads"

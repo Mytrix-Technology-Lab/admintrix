@@ -16,7 +16,7 @@ RUN chmod +x $WORKDIR/main
 
 # 添加I18N多语言文件、静态文件、配置文件、模板文件
 ADD public   $WORKDIR/public
-ADD pkg/config   $WORKDIR/config
+ADD config   $WORKDIR/config
 ADD public/template $WORKDIR/template
 
 ###############################################################################

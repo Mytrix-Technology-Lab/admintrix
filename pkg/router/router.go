@@ -3,16 +3,18 @@ package router
 import (
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
+	"github.com/mytrix-technology/admintrix/internal/controller" //nolint:typecheck
+	"github.com/mytrix-technology/admintrix/internal/middleware"
 )
 
 func init() {
 	s := g.Server()
 
 	// Middleware
-	//s.Use(middleware.CORS)
-	//s.Use(middleware.CheckLogin)
-	//s.Use(middleware.OperLog)
-	//s.Use(middleware.LoginLog)
+	s.Use(middleware.CORS)
+	s.Use(middleware.CheckLogin)
+	s.Use(middleware.OperLog)
+	s.Use(middleware.LoginLog)
 
 	/* Upload */
 	s.Group("/upload", func(group *ghttp.RouterGroup) {
@@ -21,7 +23,7 @@ func init() {
 
 	/* Index and Root */
 	s.Group("/", func(group *ghttp.RouterGroup) {
-		//group.GET("/", controller.Login.Login)
+		group.GET("/", controller.Login.Login)
 		//group.ALL("/login", controller.Login.Login)
 		//group.GET("/captcha", controller.Login.Captcha)
 		//group.ALL("/updateUserInfo", controller.Index.UpdateUserInfo)
